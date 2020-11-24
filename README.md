@@ -1,2 +1,2 @@
-# TP_veterinary
-TP Spring M1 III (Adrien, Chiara, Jean-François)
+# TP_veterinary Subject:Veterinary
+TP Spring M1 III (Adrien Lecomte, Chiara Brichot, Jean-François Gautreau).
