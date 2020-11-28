@@ -18,7 +18,7 @@ public class Medicine {
     @Id
     private int id;
     private String name;
-    private Date date;
+    private java.sql.Date date;
 
     @OneToMany
     @JoinColumn(name = "medicine_id")

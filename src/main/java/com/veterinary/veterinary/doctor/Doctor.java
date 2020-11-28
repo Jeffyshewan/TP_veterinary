@@ -21,7 +21,7 @@ public class Doctor {
     private String lastname;
     private String address;
     private int zipcode;
-    private Date arrival;
+    private java.sql.Date arrival;
 
     @OneToMany
     @JoinColumn(name = "doctor_id")
