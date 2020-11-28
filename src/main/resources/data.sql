@@ -19,3 +19,15 @@ insert into medicine(id, name, date) values (9, 'ketamine ', TO_DATE('01/02/2020
 
 -- Animal
 insert into Animal(name, birth) values ('Boby',  TO_DATE('01/02/2020', 'DD/MM/YYYY'));
+
+-- RDV
+insert into rdv(id, date) values (1, '2020-05-03T14:00');
+insert into rdv(id, date) values (2, '2020-07-05T07:00');
+insert into rdv(id, date) values (3, '2020-05-09T21:00');
+insert into rdv(id, date) values (4, '2020-06-06T18:00');
+insert into rdv(id, date) values (5, '2020-06-03T17:00');
+insert into rdv(id, date) values (6, '2020-07-07T15:00');
+insert into rdv(id, date) values (7, '2020-08-22T12:00');
+insert into rdv(id, date) values (8, '2020-05-14T09:00');
+insert into rdv(id, date) values (9, '2020-04-09T13:00');
+insert into rdv(id, date) values (10, '2020-04-07T14:00');
