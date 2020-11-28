@@ -21,7 +21,7 @@ public class MedicineController {
         return medicineRepository.findAll();
     }
 
-    @GetMapping("/{medicineId")
+    @GetMapping("/{medicineId}")
     public Optional<Medicine> getMedicine(@PathVariable("medicineId") int medicineId) {
         return medicineRepository.findById(medicineId);
     }
