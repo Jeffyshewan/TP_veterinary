@@ -18,7 +18,9 @@ insert into medicine(id, name, date) values (8, 'ivermectin ', TO_DATE('01/02/20
 insert into medicine(id, name, date) values (9, 'ketamine ', TO_DATE('01/02/2020', 'DD/MM/YYYY'));
 
 -- Animal
-insert into Animal(name, birth) values ('Boby',  TO_DATE('01/02/2020', 'DD/MM/YYYY'));
+insert into Animal(name, race, birth) values ('Boby', 'chien', TO_DATE('01/02/2018', 'DD/MM/YYYY'));
+insert into Animal(name, race, birth) values ('Bill', 'chien', TO_DATE('01/05/2020', 'DD/MM/YYYY'));
+insert into Animal(name, race, birth) values ('Rex', 'rat', TO_DATE('01/02/2020', 'DD/MM/YYYY'));
 
 -- RDV
 insert into rdv(id, date) values (1, '2020-05-03T14:00');
