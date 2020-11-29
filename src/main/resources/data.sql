@@ -31,3 +31,7 @@ insert into rdv(id, date) values (7, '2020-08-22T12:00');
 insert into rdv(id, date) values (8, '2020-05-14T09:00');
 insert into rdv(id, date) values (9, '2020-04-09T13:00');
 insert into rdv(id, date) values (10, '2020-04-07T14:00');
+
+-- Orders
+insert into prescription(name) values ('ordo1');
+insert into prescription(name) values ('ordo2');
