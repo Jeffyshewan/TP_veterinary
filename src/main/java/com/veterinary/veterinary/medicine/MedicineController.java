@@ -1,6 +1,5 @@
 package com.veterinary.veterinary.medicine;
 
-import com.veterinary.veterinary.doctor.Doctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

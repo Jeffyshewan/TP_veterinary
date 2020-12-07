@@ -1,14 +1,18 @@
 package com.veterinary.veterinary.prescription;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.veterinary.veterinary.animal.Animal;
 import com.veterinary.veterinary.doctor.Doctor;
 import com.veterinary.veterinary.medicine.Medicine;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import java.util.Set;
 
 @Entity
@@ -19,7 +23,6 @@ public class Prescription {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-
     @ManyToOne
     private Doctor doctor;
     @ManyToOne
