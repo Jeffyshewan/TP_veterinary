@@ -16,7 +16,9 @@ public class RdvController {
     private RdvRepository rdvRepository;
 
     @GetMapping
-    public Iterable<Rdv> getRdv() { return  rdvRepository.findAll(); }
+    public Iterable<Rdv> getRdv() {
+        return rdvRepository.findAll();
+    }
 
     @GetMapping("/{rdvId}")
     public Optional<Rdv> getRdv(@PathVariable("rdvId") int rdvId) {

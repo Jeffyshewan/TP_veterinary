@@ -1,7 +1,5 @@
 package com.veterinary.veterinary.animal;
 
-import com.veterinary.veterinary.animal.Animal;
-import com.veterinary.veterinary.animal.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

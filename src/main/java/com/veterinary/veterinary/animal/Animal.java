@@ -1,12 +1,14 @@
 package com.veterinary.veterinary.animal;
 
 
-import com.veterinary.veterinary.doctor.Doctor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Data
@@ -18,7 +20,6 @@ public class Animal {
     private String name;
     private java.sql.Date birth;
     private java.sql.Date death;
-
     @ManyToOne
     private Animal parent_1;
     @ManyToOne
