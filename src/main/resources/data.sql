@@ -18,7 +18,11 @@ insert into medicine(id, name, date) values (8, 'ivermectin ', TO_DATE('01/02/20
 insert into medicine(id, name, date) values (9, 'ketamine ', TO_DATE('01/02/2020', 'DD/MM/YYYY'));
 
 -- Animal
-insert into Animal(name, birth) values ('Boby',  TO_DATE('01/02/2020', 'DD/MM/YYYY'));
+insert into Animal(name, race, birth, death) values ('Boby', 'chien', TO_DATE('01/02/2015', 'DD/MM/YYYY'), TO_DATE('11/09/2020', 'DD/MM/YYYY'));
+insert into Animal(name, race, birth) values ('Bill', 'chien', TO_DATE('01/05/2018', 'DD/MM/YYYY'));
+insert into Animal(name, race, birth, parent_1_id, parent_2_id) values ('Rex', 'chien', TO_DATE('01/11/2020', 'DD/MM/YYYY'), 1, 2);
+insert into Animal(name, race, birth) values ('Splat', 'rat', TO_DATE('01/02/2018', 'DD/MM/YYYY'));
+insert into Animal(name, race, birth) values ('Bring', 'rat', TO_DATE('21/11/2019', 'DD/MM/YYYY'));
 
 -- RDV
 insert into rdv(id, date) values (1, '2020-05-03T14:00');

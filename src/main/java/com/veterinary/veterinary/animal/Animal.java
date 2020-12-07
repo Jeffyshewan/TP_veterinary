@@ -18,6 +18,7 @@ public class Animal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    private String race;
     private java.sql.Date birth;
     private java.sql.Date death;
     @ManyToOne
@@ -29,9 +30,10 @@ public class Animal {
         this.id = id;
     }
 
-    public Animal(int id, String name, java.sql.Date birth, java.sql.Date death, Animal parent_1, Animal parent_2) {
+    public Animal(int id, String name, String race, java.sql.Date birth, java.sql.Date death, Animal parent_1, Animal parent_2) {
         this.id = id;
         this.name = name;
+        this.race = race;
         this.birth = birth;
         this.death = death;
         this.parent_1 = parent_1;
