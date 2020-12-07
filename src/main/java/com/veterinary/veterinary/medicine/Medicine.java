@@ -14,7 +14,5 @@ public class Medicine {
     @Id
     private int id;
     private String name;
-    private java.sql.Date date;
-
 
 }
