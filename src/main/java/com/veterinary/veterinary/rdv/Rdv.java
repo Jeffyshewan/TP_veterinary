@@ -20,6 +20,5 @@ public class Rdv {
     @ManyToOne
     private Doctor doctor;
     @ManyToOne
-    @JoinColumn(name = "doctor_id")
     private Animal animal;
 }
