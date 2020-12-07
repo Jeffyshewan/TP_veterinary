@@ -1,5 +1,6 @@
 package com.veterinary.veterinary.medicine;
 
+import com.veterinary.veterinary.prescription.Prescription;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,8 +21,12 @@ public class MedicineController {
         return medicineRepository.findAll();
     }
 
-    @GetMapping("/{medicineId}")
+    @GetMapping("/id/{medicineId}")
     public Optional<Medicine> getMedicine(@PathVariable("medicineId") int medicineId) {
         return medicineRepository.findById(medicineId);
+    }
+    @GetMapping("/name/{name}")
+    public Iterable<Medicine> getPrescription(@PathVariable("name") String name) {
+        return medicineRepository.findMedicinesByNameIsContaining(name);
     }
 }

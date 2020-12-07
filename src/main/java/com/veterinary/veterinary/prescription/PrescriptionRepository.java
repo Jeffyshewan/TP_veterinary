@@ -7,5 +7,5 @@ import java.util.Set;
 
 @RepositoryRestResource(path = "prescriptions")
 public interface PrescriptionRepository extends JpaRepository<Prescription, Integer> {
-    public Set<Prescription> findPrescriptionByNameIsStartingWith(String name);
+    public Set<Prescription> findPrescriptionByNameIsContaining(String name);
 }

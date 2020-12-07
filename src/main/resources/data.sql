@@ -25,16 +25,16 @@ insert into Animal(name, race, birth) values ('Splat', 'rat', TO_DATE('01/02/201
 insert into Animal(name, race, birth) values ('Bring', 'rat', TO_DATE('21/11/2019', 'DD/MM/YYYY'));
 
 -- RDV
-insert into rdv(id, date) values (1, '2020-05-03T14:00');
-insert into rdv(id, date) values (2, '2020-07-05T07:00');
-insert into rdv(id, date) values (3, '2020-05-09T21:00');
-insert into rdv(id, date) values (4, '2020-06-06T18:00');
-insert into rdv(id, date) values (5, '2020-06-03T17:00');
-insert into rdv(id, date) values (6, '2020-07-07T15:00');
-insert into rdv(id, date) values (7, '2020-08-22T12:00');
-insert into rdv(id, date) values (8, '2020-05-14T09:00');
-insert into rdv(id, date) values (9, '2020-04-09T13:00');
-insert into rdv(id, date) values (10, '2020-04-07T14:00');
+insert into rdv(id, date, doctor_id, animal_id) values (1, '2020-05-03T14:00', 1, 1);
+insert into rdv(id, date, doctor_id, animal_id) values (2, '2020-07-05T07:00', 2, 1);
+insert into rdv(id, date, doctor_id, animal_id) values (3, '2020-05-09T21:00', 3, 2);
+insert into rdv(id, date, doctor_id, animal_id) values (4, '2020-06-06T18:00', 4, 5);
+insert into rdv(id, date, doctor_id, animal_id) values (5, '2020-06-03T17:00', 5, 4);
+insert into rdv(id, date, doctor_id, animal_id) values (6, '2020-07-07T15:00', 1, 1);
+insert into rdv(id, date, doctor_id, animal_id) values (7, '2020-08-22T12:00', 2, 3);
+insert into rdv(id, date, doctor_id, animal_id) values (8, '2020-05-14T09:00', 3, 5);
+insert into rdv(id, date, doctor_id, animal_id) values (9, '2020-04-09T13:00', 4, 3);
+insert into rdv(id, date, doctor_id, animal_id) values (10, '2020-04-07T14:00', 5, 2);
 
 -- Prescription
 insert into prescription(name, doctor_id, animal_id) values ('ordo1', 1, 1);

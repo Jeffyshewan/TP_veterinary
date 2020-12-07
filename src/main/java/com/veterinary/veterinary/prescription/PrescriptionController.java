@@ -20,12 +20,12 @@ public class PrescriptionController {
         return prescriptionRepository.findAll();
     }
 
-    @GetMapping("/{prescriptionId}")
+    @GetMapping("/id/{prescriptionId}")
     public Optional<Prescription> getPrescription(@PathVariable("prescriptionId") int prescriptionId) {
         return prescriptionRepository.findById(prescriptionId);
     }
-  /* @GetMapping("/search/?name={name}")
-    public Set<Prescription> getPrescription(@PathVariable("name") String name) {
-        return prescriptionRepository.findPrescriptionByNameIsStartingWith(name);
-    }*/
+    @GetMapping("/name/{name}")
+    public Iterable<Prescription> getPrescription(@PathVariable("name") String name) {
+        return prescriptionRepository.findPrescriptionByNameIsContaining(name);
+    }
 }

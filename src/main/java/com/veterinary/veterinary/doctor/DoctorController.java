@@ -20,8 +20,12 @@ public class DoctorController {
         return doctorRepository.findAll();
     }
 
-    @GetMapping("/{doctorId}")
+    @GetMapping("/id/{doctorId}")
     public Optional<Doctor> getDoctor(@PathVariable("doctorId") int doctorId) {
         return doctorRepository.findById(doctorId);
+    }
+    @GetMapping("/name/{doctorName}")
+    public Iterable<Doctor> getDoctorsByName (@PathVariable("doctorName") String name){
+        return doctorRepository.findDoctorsByLastnameIsContaining(name);
     }
 }

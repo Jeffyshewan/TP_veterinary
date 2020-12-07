@@ -20,8 +20,13 @@ public class AnimalController {
         return animalRepository.findAll();
     }
 
-    @GetMapping("/{animalId}")
+    @GetMapping("/id/{animalId}")
     public Optional<Animal> getAnimal(@PathVariable("animalId") int animalId) {
         return animalRepository.findById(animalId);
+    }
+
+    @GetMapping("/name/{animalName}")
+    public Iterable<Animal> getAnimalsByName(@PathVariable("Name") String name){
+        return animalRepository.findAnimalByNameIsContaining(name);
     }
 }
