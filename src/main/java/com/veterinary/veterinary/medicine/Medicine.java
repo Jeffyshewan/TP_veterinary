@@ -1,12 +1,10 @@
 package com.veterinary.veterinary.medicine;
 
+import com.veterinary.veterinary.doctor.Doctor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
@@ -20,7 +18,5 @@ public class Medicine {
     private String name;
     private java.sql.Date date;
 
-    @OneToMany
-    @JoinColumn(name = "medicine_id")
-    private Set<Medicine> medicines;
+
 }

@@ -2,6 +2,8 @@ package com.veterinary.veterinary.prescription;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.veterinary.veterinary.animal.Animal;
+import com.veterinary.veterinary.doctor.Doctor;
 import com.veterinary.veterinary.medicine.Medicine;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,9 +20,12 @@ public class Prescription {
     private int id;
     private String name;
 
-    @OneToMany
-    @JoinColumn(name = "prescription_id")
-    @OrderBy("name")
-    @JsonIgnoreProperties
+    @ManyToOne
+    private Doctor doctor;
+    @ManyToOne
+    private Animal animal;
+
+    @ManyToMany
     private Set<Medicine> medicines;
+
 }

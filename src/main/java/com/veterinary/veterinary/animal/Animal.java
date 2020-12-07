@@ -15,6 +15,7 @@ public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String name;
     private java.sql.Date birth;
     private java.sql.Date death;
