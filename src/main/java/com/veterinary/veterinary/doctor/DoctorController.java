@@ -1,10 +1,7 @@
 package com.veterinary.veterinary.doctor;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -28,4 +25,14 @@ public class DoctorController {
     public Iterable<Doctor> getDoctorsByName (@PathVariable("doctorName") String name){
         return doctorRepository.findDoctorsByLastnameIsContaining(name);
     }
+    @PostMapping
+    public Doctor addDoctor(@RequestBody Doctor newDoctor){
+        return doctorRepository.save(newDoctor);
+        //URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedDoctor.getId()).toUri();
+        //return ResponseEntity.create(location).build();
+    }
+    /*@DeleteMapping("/id/{doctorId}")
+    public void deleteDoctor(@PathVariable("doctorId") int doctorId){
+        doctorRepository.deleteById(doctorId);
+    }*/
 }
