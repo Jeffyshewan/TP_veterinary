@@ -3,10 +3,7 @@ package com.veterinary.veterinary.rdv;
 import com.veterinary.veterinary.animal.Animal;
 import com.veterinary.veterinary.animal.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.Optional;
@@ -39,5 +36,10 @@ public class RdvController {
     public Iterable<Rdv> getRdvsByAnimalId(@PathVariable("animalId") int animalId) {
         Optional<Animal> opt = animalRepository.findById(animalId);
         return rdvRepository.findRdvByAnimal(opt);
+    }
+
+    @DeleteMapping("/rdv/{id}")
+    public void deleteRdv(@PathVariable int id) {
+        rdvRepository.deleteById(id);
     }
 }
