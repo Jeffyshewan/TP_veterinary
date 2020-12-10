@@ -6,7 +6,7 @@ insert into doctor(id, firstname, lastname, address, zipcode, arrival) values (4
 insert into doctor(id, firstname, lastname, address, zipcode, arrival) values (5, 'Pablo', 'Picasso', '3 avenue d Antibes', '02000',TO_DATE('23/01/1986', 'DD/MM/YYYY'));
 insert into doctor(id, firstname, lastname, address, zipcode, arrival) values (6, 'Frank', 'Fontaine', '363 bis bvd rapture', '75000',TO_DATE('03/11/1968', 'DD/MM/YYYY'));
 
--- Medicine                                                                                                                                   -- Medicine
+-- Medicine
 insert into medicine(id, name) values (1, 'acepromazine');
 insert into medicine(id, name) values (2, 'neomycin');
 insert into medicine(id, name) values (3, 'metacam');
@@ -18,11 +18,12 @@ insert into medicine(id, name) values (8, 'ivermectin');
 insert into medicine(id, name) values (9, 'ketamine');
 
 -- Animal
-insert into Animal(name, race, birth, death) values ('Boby', 'chien', TO_DATE('01/02/2015', 'DD/MM/YYYY'), TO_DATE('11/09/2020', 'DD/MM/YYYY'));
-insert into Animal(name, race, birth) values ('Bill', 'chien', TO_DATE('01/05/2018', 'DD/MM/YYYY'));
-insert into Animal(name, race, birth, parent_1_id, parent_2_id) values ('Rex', 'chien', TO_DATE('01/11/2020', 'DD/MM/YYYY'), 1, 2);
-insert into Animal(name, race, birth) values ('Splat', 'rat', TO_DATE('01/02/2018', 'DD/MM/YYYY'));
-insert into Animal(name, race, birth) values ('Bring', 'rat', TO_DATE('21/11/2019', 'DD/MM/YYYY'));
+insert into Animal(id, name, race, birth, death) values (1, 'Boby', 'chien', TO_DATE('01/02/2015', 'DD/MM/YYYY'), TO_DATE('11/09/2020', 'DD/MM/YYYY'));
+insert into Animal(id, name, race, birth) values (2, 'Bill', 'chien', TO_DATE('01/05/2018', 'DD/MM/YYYY'));
+insert into Animal(id, name, race, birth, parent_1_id, parent_2_id) values (3, 'Rex', 'chien', TO_DATE('01/11/2020', 'DD/MM/YYYY'), 1, 2);
+insert into Animal(id, name, race, birth) values (4, 'Splat', 'rat', TO_DATE('01/02/2018', 'DD/MM/YYYY'));
+insert into Animal(id, name, race, birth) values (5, 'Bring', 'rat', TO_DATE('21/11/2019', 'DD/MM/YYYY'));
+insert into Animal(id, name, race, birth, parent_1_id) values (6, 'Maru', 'chien', TO_DATE('21/11/2019', 'DD/MM/YYYY'), 2);
 
 -- RDV
 insert into rdv(id, date, doctor_id, animal_id) values (1, '2020-05-03T14:00', 1, 1);
