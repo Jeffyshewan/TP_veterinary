@@ -2,10 +2,7 @@ package com.veterinary.veterinary.medicine;
 
 import com.veterinary.veterinary.prescription.Prescription;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -29,4 +26,9 @@ public class MedicineController {
     public Iterable<Medicine> getPrescription(@PathVariable("name") String name) {
         return medicineRepository.findMedicinesByNameIsContaining(name);
     }
+    @PostMapping
+    public Medicine addMedicine(@RequestBody Medicine newMedicine){
+        return medicineRepository.save(newMedicine);
+    }
+
 }

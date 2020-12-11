@@ -6,5 +6,4 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource(path = "doctors")
 public interface DoctorRepository extends JpaRepository<Doctor, Integer> {
     Iterable<Doctor> findDoctorsByLastnameIsContaining(String name);
-    void deleteById (int id);
 }

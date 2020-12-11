@@ -28,11 +28,9 @@ public class DoctorController {
     @PostMapping
     public Doctor addDoctor(@RequestBody Doctor newDoctor){
         return doctorRepository.save(newDoctor);
-        //URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedDoctor.getId()).toUri();
-        //return ResponseEntity.create(location).build();
     }
-    /*@DeleteMapping("/id/{doctorId}")
+    @DeleteMapping("/{doctorId}")
     public void deleteDoctor(@PathVariable("doctorId") int doctorId){
         doctorRepository.deleteById(doctorId);
-    }*/
+    }
 }
