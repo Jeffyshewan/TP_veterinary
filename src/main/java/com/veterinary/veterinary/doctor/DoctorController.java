@@ -21,10 +21,17 @@ public class DoctorController {
     public Optional<Doctor> getDoctor(@PathVariable("doctorId") int doctorId) {
         return doctorRepository.findById(doctorId);
     }
+
     @GetMapping("/name/{doctorName}")
-    public Iterable<Doctor> getDoctorsByName (@PathVariable("doctorName") String name){
-        return doctorRepository.findDoctorsByLastnameIsContaining(name);
+    public Iterable<Doctor> getDoctorsByName(@PathVariable("doctorName") String lastname) {
+        return doctorRepository.findDoctorsByLastnameIsContaining(lastname);
     }
+
+    @DeleteMapping("/doctors/{id}")
+    public void deleteDoctor(@PathVariable int id) {
+        doctorRepository.deleteById(id);
+    }
+
     @PostMapping
     public Doctor addDoctor(@RequestBody Doctor newDoctor){
         return doctorRepository.save(newDoctor);
@@ -32,5 +39,10 @@ public class DoctorController {
     @DeleteMapping("/{doctorId}")
     public void deleteDoctor(@PathVariable("doctorId") int doctorId){
         doctorRepository.deleteById(doctorId);
+    }
+    @PutMapping("/doctors/{id}")
+    public Doctor updateDoctor(@PathVariable("id") int id, @RequestBody Doctor doctor) {
+        doctor.setId(id);
+        return doctorRepository.save(doctor);
     }
 }

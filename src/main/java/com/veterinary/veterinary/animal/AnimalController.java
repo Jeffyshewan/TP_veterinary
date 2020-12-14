@@ -46,4 +46,15 @@ public class AnimalController {
         if(current.getParent_2()!=null) existInTree(current.getParent_2(), newAnimal);
         return false;
     }*/
+
+    @DeleteMapping("/animals/{id}")
+    public void deleteAnimal(@PathVariable int id) {
+        animalRepository.deleteById(id);
+    }
+
+    @PutMapping("/animals/{id}")
+    public Animal updateAnimal(@PathVariable("id") int id, @RequestBody Animal animal) {
+        animal.setId(id);
+        return animalRepository.save(animal);
+    }
 }

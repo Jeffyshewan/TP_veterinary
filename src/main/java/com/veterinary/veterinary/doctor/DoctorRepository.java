@@ -7,5 +7,5 @@ import java.util.Optional;
 
 @RepositoryRestResource(path = "doctors")
 public interface DoctorRepository extends JpaRepository<Doctor, Integer> {
-    Iterable<Doctor> findDoctorsByLastnameIsContaining(String name);
+    Iterable<Doctor> findDoctorsByLastnameIsContaining(String lastname);
 }

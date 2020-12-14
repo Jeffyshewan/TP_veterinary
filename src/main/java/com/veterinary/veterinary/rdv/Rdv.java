@@ -22,4 +22,43 @@ public class Rdv {
     private Doctor doctor;
     @ManyToOne
     private Animal animal;
+
+    public Rdv(int id, Date date, Doctor doctor, Animal animal) {
+        this.id = id;
+        this.date = date;
+        this.doctor = doctor;
+        this.animal = animal;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
+    public Animal getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
+    }
 }

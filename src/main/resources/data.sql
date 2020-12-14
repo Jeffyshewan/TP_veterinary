@@ -8,7 +8,7 @@ insert into doctor(id, firstname, lastname, address, zipcode, arrival) values (4
 insert into doctor(id, firstname, lastname, address, zipcode, arrival) values (5, 'Pablo', 'Picasso', '3 avenue d Antibes', '02000',TO_DATE('23/01/1986', 'DD/MM/YYYY'));
 insert into doctor(id, firstname, lastname, address, zipcode, arrival) values (6, 'Frank', 'Fontaine', '363 bis bvd rapture', '75000',TO_DATE('03/11/1968', 'DD/MM/YYYY'));
 
--- Medicine                                                                                                                                   -- Medicine
+-- Medicine
 insert into medicine(id, name) values (1, 'acepromazine');
 insert into medicine(id, name) values (2, 'neomycin');
 insert into medicine(id, name) values (3, 'metacam');

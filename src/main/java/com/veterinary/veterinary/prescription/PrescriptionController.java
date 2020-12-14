@@ -22,13 +22,24 @@ public class PrescriptionController {
     public Optional<Prescription> getPrescription(@PathVariable("prescriptionId") int prescriptionId) {
         return prescriptionRepository.findById(prescriptionId);
     }
+
     @GetMapping("/name/{name}")
     public Iterable<Prescription> getPrescription(@PathVariable("name") String name) {
         return prescriptionRepository.findPrescriptionByNameIsContaining(name);
     }
 
+
     @PostMapping
     public Prescription addPrescription(@RequestBody Prescription newPrescription){
         return prescriptionRepository.save(newPrescription);
+    @DeleteMapping("/prescriptions/{id}")
+    public void deletePrescription(@PathVariable int id) {
+        prescriptionRepository.deleteById(id);
+    }
+
+    @PutMapping("/prescriptions/{id}")
+    public Prescription updatePrescription(@PathVariable("id") int id, @RequestBody Prescription prescription) {
+        prescription.setId(id);
+        return prescriptionRepository.save(prescription);
     }
 }

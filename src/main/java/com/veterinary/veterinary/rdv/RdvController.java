@@ -37,28 +37,26 @@ public class RdvController {
         Optional<Animal> opt = animalRepository.findById(animalId);
         return rdvRepository.findRdvByAnimal(opt);
     }
-    /*
-    @GetMapping("/animalName/{animalName}")
-    public Iterable<Rdv> getRdvsByAnimalName(@PathVariable("animalName") String animalName) {
-        Iterable<Animal> it = animalRepository.findAnimalByNameIsContaining(animalName);
-        return rdvRepository.findRdvByAnimal(it);
-    }*/
 
     @GetMapping("/doctorId/{doctorId}")
     public Iterable<Rdv> getRdvsByDoctorId(@PathVariable("doctorId") int doctorId) {
         Optional<Doctor> opt = doctorRepository.findById(doctorId);
         return rdvRepository.findRdvByDoctor(opt);
     }
-/*
-    @GetMapping("/doctorName/{doctorName}")
-    public Iterable<Rdv> getRdvsByDoctorName(@PathVariable("doctorName") String doctorName) {
-        Iterable<D  octor> it = doctorRepository.findDoctorsByLastnameIsContaining(doctorName);
-        return rdvRepository.findRdvByDoctor(it);
-    }*/
 
     @PostMapping
     public Rdv addRdv(@RequestBody Rdv newRdv){
         return rdvRepository.save(newRdv);
     }
 
+    @DeleteMapping("/rdv/{id}")
+    public void deleteRdv(@PathVariable int id) {
+        rdvRepository.deleteById(id);
+    }
+
+    @PutMapping("/rdv/{id}")
+    public Rdv updateRdv(@PathVariable("id") int id, @RequestBody Rdv rdv) {
+        rdv.setId(id);
+        return rdvRepository.save(rdv);
+    }
 }
