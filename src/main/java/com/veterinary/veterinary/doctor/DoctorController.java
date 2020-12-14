@@ -32,4 +32,10 @@ public class DoctorController {
         doctorRepository.deleteById(id);
     }
 
+    @PutMapping("/doctors/{id}")
+    public Doctor updateDoctor(@PathVariable("id") int id, @RequestBody Doctor doctor) {
+        doctor.setId(id);
+        return doctorRepository.save(doctor);
+    }
+
 }

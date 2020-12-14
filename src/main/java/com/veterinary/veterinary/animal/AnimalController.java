@@ -31,4 +31,10 @@ public class AnimalController {
     public void deleteAnimal(@PathVariable int id) {
         animalRepository.deleteById(id);
     }
+
+    @PutMapping("/animals/{id}")
+    public Animal updateAnimal(@PathVariable("id") int id, @RequestBody Animal animal) {
+        animal.setId(id);
+        return animalRepository.save(animal);
+    }
 }

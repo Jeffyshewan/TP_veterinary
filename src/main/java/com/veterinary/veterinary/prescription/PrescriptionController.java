@@ -31,4 +31,10 @@ public class PrescriptionController {
     public void deletePrescription(@PathVariable int id) {
         prescriptionRepository.deleteById(id);
     }
+
+    @PutMapping("/prescriptions/{id}")
+    public Prescription updatePrescription(@PathVariable("id") int id, @RequestBody Prescription prescription) {
+        prescription.setId(id);
+        return prescriptionRepository.save(prescription);
+    }
 }

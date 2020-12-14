@@ -31,4 +31,10 @@ public class MedicineController {
     public void deleteMedicine(@PathVariable int id) {
         medicineRepository.deleteById(id);
     }
+
+    @PutMapping("/medicines/{id}")
+    public Medicine updateMedicine(@PathVariable("id") int id, @RequestBody Medicine medicine) {
+        medicine.setId(id);
+        return medicineRepository.save(medicine);
+    }
 }

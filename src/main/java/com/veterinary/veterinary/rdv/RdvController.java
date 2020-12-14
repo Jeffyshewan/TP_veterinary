@@ -42,4 +42,10 @@ public class RdvController {
     public void deleteRdv(@PathVariable int id) {
         rdvRepository.deleteById(id);
     }
+
+    @PutMapping("/rdv/{id}")
+    public Rdv updateRdv(@PathVariable("id") int id, @RequestBody Rdv rdv) {
+        rdv.setId(id);
+        return rdvRepository.save(rdv);
+    }
 }
