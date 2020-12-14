@@ -17,7 +17,7 @@ public class MedicineController {
         return medicineRepository.findAll();
     }
 
-    @GetMapping("/id/{medicineId}")
+    @GetMapping("/{medicineId}")
     public Optional<Medicine> getMedicine(@PathVariable("medicineId") int medicineId) {
         return medicineRepository.findById(medicineId);
     }
@@ -32,12 +32,12 @@ public class MedicineController {
         return medicineRepository.save(newMedicine);
     }
 
-    @DeleteMapping("/medicines/{id}")
+    @DeleteMapping("/{id}")
     public void deleteMedicine(@PathVariable int id) {
         medicineRepository.deleteById(id);
     }
 
-    @PutMapping("/medicines/{id}")
+    @PutMapping("/{id}")
     public Medicine updateMedicine(@PathVariable("id") int id, @RequestBody Medicine medicine) {
         medicine.setId(id);
         return medicineRepository.save(medicine);

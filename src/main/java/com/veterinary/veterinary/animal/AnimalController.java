@@ -4,7 +4,6 @@ import com.veterinary.veterinary.doctor.Doctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.Clock;
 import java.util.Optional;
 
 @RestController
@@ -19,8 +18,9 @@ public class AnimalController {
         return animalRepository.findAll();
     }
 
-    @GetMapping("/id/{animalId}")
+    @GetMapping("/{animalId}")
     public Optional<Animal> getAnimal(@PathVariable("animalId") int animalId) {
+        System.out.println("hellow from get by ID In Animal controller ! \n");
         return animalRepository.findById(animalId);
     }
 
@@ -30,7 +30,7 @@ public class AnimalController {
     }
 
     @PostMapping
-    public Animal addAnimal(@RequestBody Animal newAnimal){
+    public Animal addAnimal(@RequestBody Animal animal){
       /*  boolean p1 = !existInTree(animalRepository.findById(newAnimal.getParent_1().getId()).get(), newAnimal);
         boolean p2 = !existInTree(animalRepository.findById(newAnimal.getParent_2().getId()).get(), newAnimal);
 
@@ -38,7 +38,7 @@ public class AnimalController {
             animalRepository.save(newAnimal);
             return newAnimal;
         }else return new Animal(151515);*/
-        return animalRepository.save(newAnimal);
+        return animalRepository.save(animal);
     }
 /*    private boolean existInTree(Animal current, Animal newAnimal) {
         if(current.getName()==newAnimal.getName()) return true;
@@ -47,12 +47,12 @@ public class AnimalController {
         return false;
     }*/
 
-    @DeleteMapping("/animals/{id}")
+    @DeleteMapping("/{id}")
     public void deleteAnimal(@PathVariable int id) {
         animalRepository.deleteById(id);
     }
 
-    @PutMapping("/animals/{id}")
+    @PutMapping("/{id}")
     public Animal updateAnimal(@PathVariable("id") int id, @RequestBody Animal animal) {
         animal.setId(id);
         return animalRepository.save(animal);

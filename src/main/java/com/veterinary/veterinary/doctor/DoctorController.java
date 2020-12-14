@@ -17,7 +17,7 @@ public class DoctorController {
         return doctorRepository.findAll();
     }
 
-    @GetMapping("/id/{doctorId}")
+    @GetMapping("/{doctorId}")
     public Optional<Doctor> getDoctor(@PathVariable("doctorId") int doctorId) {
         return doctorRepository.findById(doctorId);
     }
@@ -27,7 +27,7 @@ public class DoctorController {
         return doctorRepository.findDoctorsByLastnameIsContaining(lastname);
     }
 
-    @DeleteMapping("/doctors/{id}")
+    @DeleteMapping("/{id}")
     public void deleteDoctor(@PathVariable int id) {
         doctorRepository.deleteById(id);
     }
@@ -38,7 +38,7 @@ public class DoctorController {
     }
 
 
-    @PutMapping("/doctors/{id}")
+    @PutMapping("/{id}")
     public Doctor updateDoctor(@PathVariable("id") int id, @RequestBody Doctor doctor) {
         doctor.setId(id);
         return doctorRepository.save(doctor);

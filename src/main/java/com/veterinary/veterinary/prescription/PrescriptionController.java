@@ -18,9 +18,9 @@ public class PrescriptionController {
         return prescriptionRepository.findAll();
     }
 
-    @GetMapping("/id/{prescriptionId}")
-    public Optional<Prescription> getPrescription(@PathVariable("prescriptionId") int prescriptionId) {
-        return prescriptionRepository.findById(prescriptionId);
+    @GetMapping("/{prescriptionId}")
+        public Optional<Prescription> getPrescription(@PathVariable("prescriptionId") int prescriptionId) {
+            return prescriptionRepository.findById(prescriptionId);
     }
 
     @GetMapping("/name/{name}")
@@ -33,12 +33,12 @@ public class PrescriptionController {
         return prescriptionRepository.save(newPrescription);
     }
 
-    @DeleteMapping("/prescriptions/{id}")
+    @DeleteMapping("/{id}")
     public void deletePrescription(@PathVariable int id) {
         prescriptionRepository.deleteById(id);
     }
 
-    @PutMapping("/prescriptions/{id}")
+    @PutMapping("/{id}")
     public Prescription updatePrescription(@PathVariable("id") int id, @RequestBody Prescription prescription) {
         prescription.setId(id);
         return prescriptionRepository.save(prescription);

@@ -27,7 +27,7 @@ public class RdvController {
         return rdvRepository.findAll();
     }
 
-    @GetMapping("/id/{rdvId}")
+    @GetMapping("/{rdvId}")
     public Optional<Rdv> getRdv(@PathVariable("rdvId") int rdvId) {
         return rdvRepository.findById(rdvId);
     }
@@ -49,12 +49,12 @@ public class RdvController {
         return rdvRepository.save(newRdv);
     }
 
-    @DeleteMapping("/rdv/{id}")
+    @DeleteMapping("/{id}")
     public void deleteRdv(@PathVariable int id) {
         rdvRepository.deleteById(id);
     }
 
-    @PutMapping("/rdv/{id}")
+    @PutMapping("/{id}")
     public Rdv updateRdv(@PathVariable("id") int id, @RequestBody Rdv rdv) {
         rdv.setId(id);
         return rdvRepository.save(rdv);
