@@ -28,10 +28,11 @@ public class PrescriptionController {
         return prescriptionRepository.findPrescriptionByNameIsContaining(name);
     }
 
-
     @PostMapping
-    public Prescription addPrescription(@RequestBody Prescription newPrescription){
+    public Prescription addPrescription(@RequestBody Prescription newPrescription) {
         return prescriptionRepository.save(newPrescription);
+    }
+
     @DeleteMapping("/prescriptions/{id}")
     public void deletePrescription(@PathVariable int id) {
         prescriptionRepository.deleteById(id);
