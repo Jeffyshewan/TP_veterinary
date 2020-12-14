@@ -31,24 +31,19 @@ public class AnimalController {
 
     @PostMapping
     public Animal addAnimal(@RequestBody Animal newAnimal){
-        Animal parent1 = animalRepository.findById(newAnimal.getParent_1().getId()).get();
-        Animal parent2 = animalRepository.findById(newAnimal.getParent_2().getId()).get();
-        boolean p1 = !existInTree(parent1, newAnimal);
-        boolean p2 = !existInTree(parent2, newAnimal);
-        System.out.println("!existInTree(newAnimal.getParent_1(), newAnimal) : " + p1);
-        System.out.println("\n!existInTree(newAnimal.getParent_2(), newAnimal) : " + p2);
+      /*  boolean p1 = !existInTree(animalRepository.findById(newAnimal.getParent_1().getId()).get(), newAnimal);
+        boolean p2 = !existInTree(animalRepository.findById(newAnimal.getParent_2().getId()).get(), newAnimal);
 
     if ( p1 && p2 ) {
             animalRepository.save(newAnimal);
             return newAnimal;
-        }else return new Animal(151515);
+        }else return new Animal(151515);*/
+        return animalRepository.save(newAnimal);
     }
-    private boolean existInTree(Animal current, Animal newAnimal) {
-        System.out.println("newAnimal.getName() : "+newAnimal.getName()+"\n");
-        System.out.println("current.getName() :"+current.getName()+"\n"+"\n");
+/*    private boolean existInTree(Animal current, Animal newAnimal) {
         if(current.getName()==newAnimal.getName()) return true;
         if(current.getParent_1()!=null) existInTree(current.getParent_1(), newAnimal);
         if(current.getParent_2()!=null) existInTree(current.getParent_2(), newAnimal);
         return false;
-    }
+    }*/
 }
