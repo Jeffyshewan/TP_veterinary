@@ -2,6 +2,9 @@ package com.veterinary.veterinary.rdv;
 
 import com.veterinary.veterinary.animal.Animal;
 import com.veterinary.veterinary.animal.AnimalRepository;
+import com.veterinary.veterinary.doctor.Doctor;
+import com.veterinary.veterinary.doctor.DoctorRepository;
+import com.veterinary.veterinary.prescription.Prescription;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +19,8 @@ public class RdvController {
     private RdvRepository rdvRepository;
     @Autowired
     private AnimalRepository animalRepository;
+    @Autowired
+    private DoctorRepository doctorRepository;
 
     @GetMapping
     public Iterable<Rdv> getRdv() {
@@ -27,15 +32,21 @@ public class RdvController {
         return rdvRepository.findById(rdvId);
     }
 
-    @GetMapping("/date/{date}")
-    public Iterable<Rdv> getPrescription(@PathVariable("date") Date date) {
-        return rdvRepository.findRdvByDate(date);
-    }
-
     @GetMapping("/animalId/{animalId}")
     public Iterable<Rdv> getRdvsByAnimalId(@PathVariable("animalId") int animalId) {
         Optional<Animal> opt = animalRepository.findById(animalId);
         return rdvRepository.findRdvByAnimal(opt);
+    }
+
+    @GetMapping("/doctorId/{doctorId}")
+    public Iterable<Rdv> getRdvsByDoctorId(@PathVariable("doctorId") int doctorId) {
+        Optional<Doctor> opt = doctorRepository.findById(doctorId);
+        return rdvRepository.findRdvByDoctor(opt);
+    }
+
+    @PostMapping
+    public Rdv addRdv(@RequestBody Rdv newRdv){
+        return rdvRepository.save(newRdv);
     }
 
     @DeleteMapping("/rdv/{id}")

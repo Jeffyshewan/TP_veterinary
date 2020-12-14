@@ -1,5 +1,6 @@
 package com.veterinary.veterinary.prescription;
 
+import com.veterinary.veterinary.medicine.Medicine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +28,10 @@ public class PrescriptionController {
         return prescriptionRepository.findPrescriptionByNameIsContaining(name);
     }
 
+
+    @PostMapping
+    public Prescription addPrescription(@RequestBody Prescription newPrescription){
+        return prescriptionRepository.save(newPrescription);
     @DeleteMapping("/prescriptions/{id}")
     public void deletePrescription(@PathVariable int id) {
         prescriptionRepository.deleteById(id);

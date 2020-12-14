@@ -27,6 +27,13 @@ public class MedicineController {
         return medicineRepository.findMedicinesByNameIsContaining(name);
     }
 
+    @PostMapping
+    public Medicine addMedicine(@RequestBody Medicine newMedicine){
+        return medicineRepository.save(newMedicine);
+    }
+
+
+
     @DeleteMapping("/medicines/{id}")
     public void deleteMedicine(@PathVariable int id) {
         medicineRepository.deleteById(id);

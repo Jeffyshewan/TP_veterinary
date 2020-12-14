@@ -8,5 +8,4 @@ import java.util.Optional;
 @RepositoryRestResource(path = "animals")
 public interface AnimalRepository extends JpaRepository<Animal, Integer> {
     public Iterable<Animal> findAnimalByNameIsContaining(String name);
-
 }
