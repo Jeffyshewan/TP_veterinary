@@ -32,8 +32,6 @@ public class MedicineController {
         return medicineRepository.save(newMedicine);
     }
 
-
-
     @DeleteMapping("/medicines/{id}")
     public void deleteMedicine(@PathVariable int id) {
         medicineRepository.deleteById(id);

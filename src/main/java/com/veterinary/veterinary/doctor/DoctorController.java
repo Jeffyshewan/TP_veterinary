@@ -33,13 +33,11 @@ public class DoctorController {
     }
 
     @PostMapping
-    public Doctor addDoctor(@RequestBody Doctor newDoctor){
+    public Doctor addDoctor(@RequestBody Doctor newDoctor) {
         return doctorRepository.save(newDoctor);
     }
-    @DeleteMapping("/{doctorId}")
-    public void deleteDoctor(@PathVariable("doctorId") int doctorId){
-        doctorRepository.deleteById(doctorId);
-    }
+
+
     @PutMapping("/doctors/{id}")
     public Doctor updateDoctor(@PathVariable("id") int id, @RequestBody Doctor doctor) {
         doctor.setId(id);

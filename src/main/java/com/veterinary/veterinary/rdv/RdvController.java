@@ -45,7 +45,7 @@ public class RdvController {
     }
 
     @PostMapping
-    public Rdv addRdv(@RequestBody Rdv newRdv){
+    public Rdv addRdv(@RequestBody Rdv newRdv) {
         return rdvRepository.save(newRdv);
     }
 
