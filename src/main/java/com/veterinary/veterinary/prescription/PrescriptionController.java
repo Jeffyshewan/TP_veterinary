@@ -33,8 +33,7 @@ public class PrescriptionController {
 
     @PostMapping
     public Prescription addPrescription(@RequestBody Prescription newPrescription) {
-        Iterable<Dosage> dosages = newPrescription.getDosages();
-        for (Dosage d : dosages) {
+        for (Dosage d : newPrescription.getDosages()) {
             dosageRepository.save(d);
         }
         return prescriptionRepository.save(newPrescription);
@@ -42,12 +41,21 @@ public class PrescriptionController {
 
     @DeleteMapping("/{id}")
     public void deletePrescription(@PathVariable int id) {
+        //On parcour les dosages de la prescription a delete pour les delete.
+        for(Dosage d : prescriptionRepository.findById(id).get().getDosages()){
+            dosageRepository.delete(d);
+        }
         prescriptionRepository.deleteById(id);
     }
 
     @PutMapping("/{id}")
     public Prescription updatePrescription(@PathVariable("id") int id, @RequestBody Prescription prescription) {
         prescription.setId(id);
+        Iterable<Dosage> dosages = prescription.getDosages();
+        // A Finir modifier les dosages dans la table dosage avant de save le prescription
+        for (Dosage d : dosages) {
+            dosageRepository.save(d);
+        }
         return prescriptionRepository.save(prescription);
     }
 }
