@@ -54,6 +54,7 @@ insert into prescription(name, doctor_id, animal_id) values ('ordo12', 4, 2);
 insert into prescription(name, doctor_id, animal_id) values ('ordo13', 5, 2);
 insert into prescription(name, doctor_id, animal_id) values ('ordo14', 5, 2);
 
+
 -- Dosage
 insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (1, 6, 1, 1);
 insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (1, 1, 1, 1);
@@ -76,3 +77,6 @@ insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (11
 insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (12, 6, 2, 1);
 insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (13, 1, 2, 1);
 insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (14, 1, 2, 1);
+
+-- authentification + role admin + user
+
