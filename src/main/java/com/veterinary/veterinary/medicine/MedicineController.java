@@ -1,5 +1,6 @@
 package com.veterinary.veterinary.medicine;
 
+import com.veterinary.veterinary.dosage.DosageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,8 @@ public class MedicineController {
 
     @Autowired
     private MedicineRepository medicineRepository;
+    @Autowired
+    private DosageRepository dosageRepository;
 
     @GetMapping
     public Iterable<Medicine> getMedicines() {

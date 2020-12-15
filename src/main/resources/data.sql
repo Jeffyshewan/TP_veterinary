@@ -53,24 +53,25 @@ insert into prescription(name, doctor_id, animal_id) values ('ordo11', 3, 2);
 insert into prescription(name, doctor_id, animal_id) values ('ordo12', 4, 2);
 insert into prescription(name, doctor_id, animal_id) values ('ordo13', 5, 2);
 
--- PRESCRIPTION_MEDICINES
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (1, 6);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (1, 1);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (1, 5);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (2, 2);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (2, 9);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (3, 7);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (5, 6);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (4, 3);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (6, 6);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (6, 9);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (7, 4);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (8, 3);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (9, 9);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (9, 4);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (9, 7);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (10, 9);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (11, 3);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (11, 7);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (12, 6);
-insert into PRESCRIPTION_MEDICINES(PRESCRIPTION_ID, MEDICINES_ID) values (13, 1);
+
+-- Dosage
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (1, 6, 1, 1);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (1, 1, 1, 1);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (1, 5, 1, 2);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (2, 2, 1, 2);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (2, 9, 1, 2);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (3, 7, 1, 2);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (5, 6, 2, 2);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (4, 3, 2, 2);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (6, 6, 2, 2);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (6, 9, 2, 1);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (7, 4, 2, 1);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (8, 3, 2, 1);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (9, 9, 1, 3);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (9, 4, 1, 3);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (9, 7, 1, 3);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (10, 9, 1, 3);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (11, 3, 2, 1);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (11, 7, 2, 1);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (12, 6, 2, 1);
+insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (13, 1, 2, 1);

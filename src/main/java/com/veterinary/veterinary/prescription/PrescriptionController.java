@@ -1,6 +1,7 @@
 package com.veterinary.veterinary.prescription;
 
-import com.veterinary.veterinary.medicine.Medicine;
+import com.veterinary.veterinary.dosage.Dosage;
+import com.veterinary.veterinary.dosage.DosageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,8 @@ public class PrescriptionController {
 
     @Autowired
     private PrescriptionRepository prescriptionRepository;
+    @Autowired
+    private DosageRepository dosageRepository;
 
     @GetMapping
     public Iterable<Prescription> getPrescriptions() {
@@ -30,6 +33,10 @@ public class PrescriptionController {
 
     @PostMapping
     public Prescription addPrescription(@RequestBody Prescription newPrescription) {
+        Iterable<Dosage> dosages = newPrescription.getDosages();
+        for (Dosage d : dosages) {
+            dosageRepository.save(d);
+        }
         return prescriptionRepository.save(newPrescription);
     }
 
