@@ -51,9 +51,7 @@ public class PrescriptionController {
     @PutMapping("/{id}")
     public Prescription updatePrescription(@PathVariable("id") int id, @RequestBody Prescription prescription) {
         prescription.setId(id);
-        Iterable<Dosage> dosages = prescription.getDosages();
-        // A Finir modifier les dosages dans la table dosage avant de save le prescription
-        for (Dosage d : dosages) {
+        for (Dosage d : prescription.getDosages()) {
             dosageRepository.save(d);
         }
         return prescriptionRepository.save(prescription);
