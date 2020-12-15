@@ -17,7 +17,6 @@ public class Medicine {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-
     public Medicine(int id, String name) {
         this.id = id;
         this.name = name;
