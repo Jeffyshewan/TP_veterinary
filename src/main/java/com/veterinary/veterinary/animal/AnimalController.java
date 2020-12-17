@@ -22,14 +22,7 @@ public class AnimalController {
     public Optional<Animal> getAnimal(@PathVariable("animalId") int animalId) {
         return animalRepository.findById(animalId);
     }
-    @GetMapping("/parents/{animalId}")
-    public List<Boolean> getParents(@PathVariable("animalId") int animalId) {
-        List<Boolean> parents = List.of(
-                animalRepository.findById(animalId).get().isParent1Null(),
-                animalRepository.findById(animalId).get().isParent2Null()
-        );
-        return parents;
-    }
+
     @GetMapping("/name/{animalName}")
     public Iterable<Animal> getAnimalsByName(@PathVariable("animalName") String name) {
         return animalRepository.findAnimalByNameIsContaining(name);
