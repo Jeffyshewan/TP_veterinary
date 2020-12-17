@@ -22,8 +22,9 @@ insert into Animal(name, race, birth, death) values ('Boby', 'chien', TO_DATE('0
 insert into Animal(name, race, birth) values ('Bill', 'chien', TO_DATE('01/05/2018', 'DD/MM/YYYY'));
 insert into Animal(name, race, birth) values ('Darius', 'chien', TO_DATE('01/05/2016', 'DD/MM/YYYY'));
 insert into Animal(name, race, birth, parent_1_id, parent_2_id) values ('Rex', 'chien', TO_DATE('01/11/2020', 'DD/MM/YYYY'), 1, 2);
-insert into Animal(name, race, birth) values ('Splat', 'rat', TO_DATE('01/02/2018', 'DD/MM/YYYY'));
-insert into Animal(name, race, birth) values ('Bring', 'rat', TO_DATE('21/11/2019', 'DD/MM/YYYY'));
+insert into Animal(name, race, birth, parent_1_id) values ('Splat', 'chien', TO_DATE('01/02/2018', 'DD/MM/YYYY'), 4);
+insert into Animal(name, race, birth) values ('Bring', 'chien', TO_DATE('21/11/2019', 'DD/MM/YYYY'));
+
 
 -- RDV
 insert into rdv(id, date, doctor_id, animal_id) values (1, '2020-05-03T14:00', 1, 1);
@@ -52,7 +53,7 @@ insert into prescription(name, doctor_id, animal_id) values ('ordo11', 3, 2);
 insert into prescription(name, doctor_id, animal_id) values ('ordo12', 4, 2);
 insert into prescription(name, doctor_id, animal_id) values ('ordo13', 5, 2);
 insert into prescription(name, doctor_id, animal_id) values ('ordo14', 5, 2);
-
+insert into prescription(name, doctor_id, animal_id) values ('ordo15', 5, 2);
 
 -- Dosage
 insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (1, 6, 1, 1);
@@ -75,7 +76,6 @@ insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (11
 insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (11, 7, 2, 1);
 insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (12, 6, 2, 1);
 insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (13, 1, 2, 1);
-insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (14, 1, 2, 1);
 
 -- authentification + role admin + user
 insert into ROLE values (1, '"ROLE_ADMIN');
