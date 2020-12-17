@@ -22,8 +22,8 @@ insert into Animal(name, race, birth, death) values ('Boby', 'chien', TO_DATE('0
 insert into Animal(name, race, birth) values ('Bill', 'chien', TO_DATE('01/05/2018', 'DD/MM/YYYY'));
 insert into Animal(name, race, birth) values ('Darius', 'chien', TO_DATE('01/05/2016', 'DD/MM/YYYY'));
 insert into Animal(name, race, birth, parent_1_id, parent_2_id) values ('Rex', 'chien', TO_DATE('01/11/2020', 'DD/MM/YYYY'), 1, 2);
-insert into Animal(name, race, birth, parent_1_id) values ('Splat', 'rat', TO_DATE('01/02/2018', 'DD/MM/YYYY'), 4);
-insert into Animal(name, race, birth) values ('Bring', 'rat', TO_DATE('21/11/2019', 'DD/MM/YYYY'));
+insert into Animal(name, race, birth, parent_1_id) values ('Splat', 'chien', TO_DATE('01/02/2018', 'DD/MM/YYYY'), 4);
+insert into Animal(name, race, birth) values ('Bring', 'chien', TO_DATE('21/11/2019', 'DD/MM/YYYY'));
 
 
 -- RDV
