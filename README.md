@@ -1,10 +1,11 @@
 # TP Spring, M1 III. Sujet choisi : TP Veterinary
 # Groupe : Adrien Lecomte, Chiara Brichot, Jean-François Gautreau.
 
-Guide d'ulitisation : <br />
-* Le projet contient un dossier API avec un fichier a importer dans Insomia. Elle contient des appels a effectuer sur le projet lorsqu'il tourne.
-* Le fichier insomnia se trouve dans le dossier à la racine, nommé ** API > Insomnia_2020-12-13.json (fichier insomnia) **
-* Pour s'authentifier dans l'application, utiliser l un des comptes admins créés pour l'application -> ** Mot de passe : justPixel / Login : Chiara **
+Guide d'utilisation : <br />
+* Le projet contient un dossier API avec un fichier a importer dans Insomia. Il contient les appels a effectuer sur le projet.
+* Le fichier insomnia se trouve dans le dossier à la racine, nommé API > Insomnia_2020-12-13.json (fichier insomnia)
+* Pour s'authentifier dans l'application, utiliser l'un des comptes admins créés pour l'application :
+* Mot de passe : justPixel / Login : Chiara
 
 ****
 
