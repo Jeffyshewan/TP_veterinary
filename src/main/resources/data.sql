@@ -79,9 +79,14 @@ insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (13
 insert into DOSAGE(PRESCRIPTION_ID, MEDICINE_ID, quantity, frequency) values (14, 1, 2, 1);
 
 -- authentification + role admin + user
-insert into ROLE(id, titre) values (1, 'ADMIN');
-insert into ROLE(id, titre) values (2, 'USER');
+insert into ROLE values (1, '"ROLE_ADMIN');
+insert into ROLE values (2, 'ROLE_USER');
 
 insert into USER(num, username, password) values (1, 'Chiara', 'justPixel');
 insert into USER(num, username, password) values (2, 'Adrien', 'justPixel');
 insert into USER(num, username, password) values (3, 'Jeff', 'justPixel');
+
+insert into USER_ROLES values (1, 1),
+(2, 2),
+(1, 2),
+(3, 1);
