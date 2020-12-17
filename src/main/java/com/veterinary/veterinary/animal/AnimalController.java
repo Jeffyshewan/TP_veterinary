@@ -1,6 +1,4 @@
 package com.veterinary.veterinary.animal;
-
-import com.veterinary.veterinary.doctor.Doctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,12 +23,12 @@ public class AnimalController {
     }
 
     @GetMapping("/name/{animalName}")
-    public Iterable<Animal> getAnimalsByName(@PathVariable("animalName") String name){
+    public Iterable<Animal> getAnimalsByName(@PathVariable("animalName") String name) {
         return animalRepository.findAnimalByNameIsContaining(name);
     }
 
     @PostMapping
-    public Animal addAnimal(@RequestBody Animal animal){
+    public Animal addAnimal(@RequestBody Animal animal) {
       /*  boolean p1 = !existInTree(animalRepository.findById(newAnimal.getParent_1().getId()).get(), newAnimal);
         boolean p2 = !existInTree(animalRepository.findById(newAnimal.getParent_2().getId()).get(), newAnimal);
 

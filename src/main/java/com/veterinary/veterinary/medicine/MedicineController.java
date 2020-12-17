@@ -31,7 +31,7 @@ public class MedicineController {
     }
 
     @PostMapping
-    public Medicine addMedicine(@RequestBody Medicine newMedicine){
+    public Medicine addMedicine(@RequestBody Medicine newMedicine) {
         return medicineRepository.save(newMedicine);
     }
 

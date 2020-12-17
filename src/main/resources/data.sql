@@ -1,4 +1,3 @@
-
 -- Doctors
 insert into doctor(id, firstname, lastname, address, zipcode, arrival) values (1, 'Yolande', 'Moreau', '3 rue Deschiens', '59000',TO_DATE('03/02/1974', 'DD/MM/YYYY'));
 insert into doctor(id, firstname, lastname, address, zipcode, arrival) values (2, 'Heloise', 'Letissier', '5 rue Bowie', '95360',TO_DATE('16/10/1975', 'DD/MM/YYYY'));

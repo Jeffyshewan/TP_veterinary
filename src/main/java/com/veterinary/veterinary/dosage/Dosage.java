@@ -1,8 +1,5 @@
 package com.veterinary.veterinary.dosage;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.veterinary.veterinary.medicine.Medicine;
-import com.veterinary.veterinary.prescription.Prescription;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
