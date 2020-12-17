@@ -37,7 +37,10 @@ public class AnimalController {
 
     @PostMapping
     public Animal addAnimal(@RequestBody Animal animal){
-        return animalRepository.save(animal);
+        //L'animal ne peut être son propre parent direct
+        if (animal.getId()!=animal.getParent_1().getId() && animal.getId() != animal.getParent_2().getId())
+            return animalRepository.save(animal);
+        else return null;
     }
 
     @DeleteMapping("/{id}")
@@ -45,6 +48,7 @@ public class AnimalController {
         animalRepository.deleteById(id);
     }
 
+    //fonction récursive qui stoque les id des parents dans un tableau sur tous l'arbre de parentalité.
     public void checkParents(int currentId) {
         if (animalRepository.findById(currentId) != null) {
             parentsId.add(currentId);
@@ -62,8 +66,9 @@ public class AnimalController {
         parentsId.clear();
         newAnimal.setId(id);
         checkParents(id);// Stock les Id des parents dans parentsId
-        parentsId.remove(0);//Supprime le 1e ID qui est celui qu'on midifie
-        if(parentsId.contains(id)){
+        parentsId.remove(0);//Supprime le 1e ID qui est celui qu'on modifie
+        //Id de l'animal qu'on modifie n'est pas présent dans ses ancetres et est différent de ses propres parents directs.
+        if(parentsId.contains(id) || !(newAnimal.getId()!=newAnimal.getParent_1().getId() && newAnimal.getId() != newAnimal.getParent_2().getId())){
             parentsId.clear();
             return null;
         }
