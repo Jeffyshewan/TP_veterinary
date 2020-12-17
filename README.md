@@ -38,7 +38,7 @@ class Animal  :
    Class Rdv : 
    - GET : rdvs: Liste tous les rendez-vous
    - GET : rdvsByDoctorId: Liste tous les rendez-vous du docteur selon son ID.
-   - GET : rdvsByDoctorId: Liste tous les rendez-vous de l'animal selon son ID.
+   - GET : rdvsByAnimalId: Liste tous les rendez-vous de l'animal selon son ID.
    - POST : Ajoute un rendez-vous.
    - PUT : Modifie le rdv -> sa date ou l'id du docteur ou de l'animal.
    - GET : rdvById -> Affiche le rdv selon son Id.
