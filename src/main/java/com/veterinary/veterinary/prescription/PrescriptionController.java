@@ -22,8 +22,8 @@ public class PrescriptionController {
     }
 
     @GetMapping("/{prescriptionId}")
-        public Optional<Prescription> getPrescription(@PathVariable("prescriptionId") int prescriptionId) {
-            return prescriptionRepository.findById(prescriptionId);
+    public Optional<Prescription> getPrescription(@PathVariable("prescriptionId") int prescriptionId) {
+        return prescriptionRepository.findById(prescriptionId);
     }
 
     @GetMapping("/name/{name}")
@@ -42,7 +42,7 @@ public class PrescriptionController {
     @DeleteMapping("/{id}")
     public void deletePrescription(@PathVariable int id) {
         //On parcour les dosages de la prescription a delete pour les delete.
-        for(Dosage d : prescriptionRepository.findById(id).get().getDosages()){
+        for (Dosage d : prescriptionRepository.findById(id).get().getDosages()) {
             dosageRepository.delete(d);
         }
         prescriptionRepository.deleteById(id);
